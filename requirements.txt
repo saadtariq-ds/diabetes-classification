@@ -1,0 +1,6 @@
+ipykernel
+dvc
+dagshub
+scikit-learn
+mlflow
+dvc-s3
