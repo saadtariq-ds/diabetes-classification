@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ```
 
 ## For Adding DVC Stages
-bash```
+```bash
 dvc stage add -n preprocess \
 	-p preprocess.input_dir,preprocess.output_dir \
 	-d src/preprocess.py -d data/raw/data.csv \
@@ -56,12 +56,16 @@ dvc stage add -n preprocess \
 	python src/preprocess.py
 ```
 
+```bash
 dvc stage add -n train \
 	-p train.data_dir,train.model_dir,train.random_state \
 	-d src/train.py -d data/processed/preprocessed_data.csv \
 	-o models/random_forest.pkl \
 	python src/train.py
+```
 
+```bash
 dvc stage add -n evaluate \
 	-d src/evaluate.py -d models/model.pkl -d data/raw/data.csv \
 	python src/evaluate.py
+```
