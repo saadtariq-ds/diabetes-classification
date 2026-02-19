@@ -13,7 +13,7 @@ def preprocess_data(input_path, output_path):
     # Create the output directory if it doesn't exist
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    data.to_csv(output_path, index=False, header=None)
+    data.to_csv(output_path, index=False, header=True)
     print(f"Preprocessed data saved to {output_path}")
 
 if __name__ == "__main__":
